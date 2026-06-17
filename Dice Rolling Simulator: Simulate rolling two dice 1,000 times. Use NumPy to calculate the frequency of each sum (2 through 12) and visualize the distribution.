@@ -1,0 +1,11 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+die_rolls = np.random.randint(2 , 13 , 1000)
+elements , counts = np.unique(die_rolls , return_counts = True)
+
+print('unique elements in die roll : ',elements)
+print('frequency of occurance in sample set of each element :',counts)
+
+plt.bar(elements , counts)
+plt.show()
