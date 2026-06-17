@@ -1,0 +1,29 @@
+# Minor project designed to analyse the Manufacturing defects using Numpy , Matplotlib 
+
+# The project focuses on determining the total number of defects, average defects per product, percentage of defect-free products, 
+# ploting a graph between product index and corresponding defects and the count of products exceeding an acceptable defect threshold
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+defect_count = np.random.randint(0,6,100)
+print(defect_count)
+
+average_defect = np.mean(defect_count)
+print('average defect per product : ',average_defect)
+
+count = 0
+for i in range(0,100):
+    if defect_count[i] == 0:
+        count = count +1
+    else:
+        continue
+per = (count / len(defect_count))*100
+print('percentage of products with zero defects : ',per)
+
+
+print('number of products having more than 3 defects : ',len(defect_count[defect_count > 3]))
+
+product_index = np.arange(0,100)
+plt.plot(product_index , defect_count)
+plt.show()
